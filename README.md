@@ -18,6 +18,22 @@ Performance was evaluated using:
 
 The analysis prioritised minimising false negatives due to the clinical risk associated with missed malignant diagnoses.
 
+## Key Findings
+- Random forest achieved the strongest overall performance (Accuracy = 97.1%, AUC = 0.995)
+- SVM achieved the highest sensitivity (98.6%), reducing false negatives
+- Logistic regression produced competitive results despite its simpler linear structure
+- Strong class separability suggests the dataset is highly structured
+
+## Repository Structure
+├── outputs/
+│   ├── figures/
+│   ├── auc_results.csv
+│   ├── cross_validation_accuracy.csv
+│   └── model_metrics.csv
+├── breast_cancer_modelling.R
+├── breast_cancer_modelling_report.pdf
+└── README.md
+
 ## Dataset
 The Wisconsin Breast Cancer dataset contains 699 observations and 9 predictor variables describing cellular characteristics derived from digitised fine needle aspirate images.
 
@@ -38,16 +54,13 @@ Dataset source:
 https://archive.ics.uci.edu/dataset/15/breast+cancer+wisconsin+original
 
 ## Dataset Characteristics
-
 The dataset contains a moderate class imbalance:
-
 - Benign: 458 observations (65.5%)
 - Malignant: 241 observations (34.5%)
 
 Understanding class distribution is important in diagnostic classification problems because model accuracy alone can become misleading when one class dominates the dataset.
 
-The class distribution is shown below.
-
+The class distribution is shown below:
 ![Class Distribution](outputs/figures/class_distribution.png)
 
 ## Pre-processing
@@ -83,7 +96,16 @@ The SVM model achieved the highest sensitivity, improving detection of malignant
 
 Random Forest achieved the strongest balance between sensitivity and specificity.
 
-## Key Findings
+## Reproducibility
+To reproduce the analysis:
+
+1. Install required R packages
+2. Run `breast_cancer_modelling.R`
+3. Outputs will be generated automatically in the `outputs/` directory
+
+The workflow uses a fixed random seed (`set.seed(123)`) for reproducibility.
+
+## Interpretation
 The results suggest that model selection is less dependent on marginal differences in accuracy and more dependent on the clinical consequences of misclassification.
 
 False negatives represent missed malignant diagnoses and therefore carry substantially greater risk than false positives. This makes sensitivity particularly important in diagnostic classification problems.
@@ -94,13 +116,4 @@ Random Forest variable importance analysis identified:
 - Bare nuclei
 - Clump thickness
 - Cell size
-
 as the strongest predictors within the model.
-
-## Repository Structure
-```text
-outputs/figures/                   Saved visualisations
-outputs/model_metrics.csv          Test-set evaluation metrics
-outputs/auc_results.csv            ROC/AUC results
-outputs/cross_validation_accuracy.csv
-breast_cancer_predictive_modelling.R
