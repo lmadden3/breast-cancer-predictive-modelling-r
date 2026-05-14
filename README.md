@@ -24,7 +24,7 @@ The analysis prioritised minimising false negatives due to the clinical risk ass
 - Random forest achieved the strongest overall performance (Accuracy = 97.1%, AUC = 0.995)
 - SVM achieved the highest sensitivity (98.6%), reducing false negatives
 - Logistic regression produced competitive results despite its simpler linear structure
-- Strong class separability suggests the dataset is highly structured
+- Strong class separability suggests the predictors contain highly discriminative diagnostic information
 
 ## Repository Structure
 
@@ -97,6 +97,7 @@ Random Forest was used as an ensemble learning approach and to assess variable i
 - R
 - caret
 - ggplot2
+- tidyr
 - randomForest
 - pROC
 - corrplot
@@ -140,12 +141,11 @@ Several predictors showed strong positive correlations, particularly variables d
 ### Variable Importance
 ![Variable Importance](outputs/figures/random_forest_variable_importance.png)
 
-Random Forest variable importance analysis identified:
+Random Forest variable importance analysis identified the following variables as the strongest predictors within the model:
+
 - Bare nuclei
 - Clump thickness
 - Cell size
-  
-as the strongest predictors within the model.
 
 ## Limitations
 
