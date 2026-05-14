@@ -37,6 +37,19 @@ Missing values were present in the `Bare.nuclei` variable (n = 16) and were impu
 Dataset source:
 https://archive.ics.uci.edu/dataset/15/breast+cancer+wisconsin+original
 
+## Dataset Characteristics
+
+The dataset contains a moderate class imbalance:
+
+- Benign: 458 observations (65.5%)
+- Malignant: 241 observations (34.5%)
+
+Understanding class distribution is important in diagnostic classification problems because model accuracy alone can become misleading when one class dominates the dataset.
+
+The class distribution is shown below.
+
+![Class Distribution](outputs/figures/class_distribution.png)
+
 ## Pre-processing
 Pre-processing steps included:
 - Removal of the non-predictive ID variable
