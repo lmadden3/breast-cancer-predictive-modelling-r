@@ -25,6 +25,8 @@ The analysis prioritised minimising false negatives due to the clinical risk ass
 - Strong class separability suggests the dataset is highly structured
 
 ## Repository Structure
+```text
+breast-cancer-predictive-modelling-r/
 ├── outputs/
 │   ├── figures/
 │   ├── auc_results.csv
@@ -33,6 +35,7 @@ The analysis prioritised minimising false negatives due to the clinical risk ass
 ├── breast_cancer_modelling.R
 ├── breast_cancer_modelling_report.pdf
 └── README.md
+```
 
 ## Dataset
 The Wisconsin Breast Cancer dataset contains 699 observations and 9 predictor variables describing cellular characteristics derived from digitised fine needle aspirate images.
