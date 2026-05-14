@@ -1,4 +1,0 @@
-"Model","Accuracy","Sensitivity","Specificity","Precision","F1_Score"
-"Logistic Regression",0.957,0.944,0.964,0.932,0.938
-"Support Vector Machine",0.943,0.986,0.92,0.866,0.922
-"Random Forest",0.971,0.972,0.971,0.946,0.959
