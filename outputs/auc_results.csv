@@ -1,0 +1,4 @@
+"Model","AUC"
+"Logistic Regression",0.992
+"Support Vector Machine",0.988
+"Random Forest",0.995

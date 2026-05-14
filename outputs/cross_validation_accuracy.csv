@@ -1,0 +1,4 @@
+"Model","CV_Accuracy"
+"Logistic Regression",0.967
+"Support Vector Machine",0.963
+"Random Forest",0.969
