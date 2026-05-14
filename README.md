@@ -1,9 +1,7 @@
-# -----------------------------------------------
 # Predictive Modelling of Breast Cancer Diagnosis
-# -----------------------------------------------
 
 ## Overview
-# -----------------------------------------------
+
 This project applies machine learning methods to classify breast tumours as benign or malignant using the Wisconsin Breast Cancer dataset from the UCI Machine Learning Repository.
 
 Three classification models were implemented and compared:
@@ -22,13 +20,14 @@ Performance was evaluated using:
 The analysis prioritised minimising false negatives due to the clinical risk associated with missed malignant diagnoses.
 
 ## Key Findings
-# -----------------------------------------------
+
 - Random forest achieved the strongest overall performance (Accuracy = 97.1%, AUC = 0.995)
 - SVM achieved the highest sensitivity (98.6%), reducing false negatives
 - Logistic regression produced competitive results despite its simpler linear structure
 - Strong class separability suggests the dataset is highly structured
 
 ## Repository Structure
+
 ```text
 breast-cancer-predictive-modelling-r/
 ├── outputs/
@@ -42,7 +41,7 @@ breast-cancer-predictive-modelling-r/
 ```
 
 ## Dataset
-# -----------------------------------------------
+
 The Wisconsin Breast Cancer dataset contains 699 observations and 9 predictor variables describing cellular characteristics derived from digitised fine needle aspirate images.
 
 Predictors include:
@@ -61,7 +60,7 @@ Missing values were present in the `Bare.nuclei` variable (n = 16) and were impu
 Dataset source: [UCI Wisconsin Breast Cancer Dataset](https://archive.ics.uci.edu/dataset/15/breast+cancer+wisconsin+original)
 
 ## Dataset Characteristics
-# -----------------------------------------------
+
 The dataset contains a moderate class imbalance:
 - Benign: 458 observations (65.5%)
 - Malignant: 241 observations (34.5%)
@@ -72,6 +71,7 @@ The class distribution is shown below:
 ![Class Distribution](outputs/figures/class_distribution.png)
 
 ## Pre-processing
+
 Pre-processing steps included:
 - Removal of the non-predictive ID variable
 - Median imputation for missing values
@@ -82,7 +82,7 @@ Pre-processing steps included:
 Scaling parameters were estimated using training data only and then applied to the test set to prevent data leakage.
 
 ## Machine Learning Methods
-# -----------------------------------------------
+
 ### Logistic Regression
 Used as an interpretable baseline linear classifier.
 
@@ -93,7 +93,7 @@ A radial kernel SVM was implemented to model non-linear decision boundaries.
 Random Forest was used as an ensemble learning approach and to assess variable importance.
 
 ## Technologies
-# -----------------------------------------------
+
 - R
 - caret
 - ggplot2
@@ -102,7 +102,7 @@ Random Forest was used as an ensemble learning approach and to assess variable i
 - corrplot
 
 ## Results
-# -----------------------------------------------
+
 Random Forest achieved the strongest overall performance:
 
 | Model | Accuracy | Sensitivity | Specificity | AUC |
@@ -120,7 +120,7 @@ ROC/AUC analysis demonstrated strong discrimination performance across all class
 - Random Forest achieved the strongest balance between sensitivity and specificity.
 
 ## Reproducibility
-# -----------------------------------------------
+
 To reproduce the analysis:
 
 1. Install required R packages
@@ -130,7 +130,7 @@ To reproduce the analysis:
 The workflow uses a fixed random seed (`set.seed(123)`) for reproducibility.
 
 ## Interpretation
-# -----------------------------------------------
+
 The results suggest that model selection is less dependent on marginal differences in accuracy and more dependent on the clinical consequences of misclassification.
 
 False negatives represent missed malignant diagnoses and therefore carry substantially greater risk than false positives. This makes sensitivity particularly important in diagnostic classification problems.
@@ -148,7 +148,7 @@ Random Forest variable importance analysis identified:
 as the strongest predictors within the model.
 
 ## Limitations
-# -----------------------------------------------
+
 Several limitations should be considered:
 - relatively small dataset size
 - ordinal predictors treated numerically
@@ -159,7 +159,7 @@ Several limitations should be considered:
 These limitations may affect the precision of performance estimates and model generalisability.
 
 ## Future Work
-# -----------------------------------------------
+
 Potential future improvements include:
 
 - repeated cross-validation to reduce dependence on a single train-test split
